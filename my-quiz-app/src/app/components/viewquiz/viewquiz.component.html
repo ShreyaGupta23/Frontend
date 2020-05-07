@@ -1,0 +1,10 @@
+<div class="container-lg">
+<div class="card bg-dark " style="width: 18rem;">
+    <div class="card-body">
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let quiz of quizzes"> <p>{{quiz.name}}<button class="btn btn-primary" (click)="takequiz(quiz)"> Start Quiz </button></p></li>
+           
+          </ul>
+</div>
+</div>
+</div>

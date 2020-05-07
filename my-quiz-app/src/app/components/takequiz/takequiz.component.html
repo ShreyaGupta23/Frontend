@@ -1,0 +1,34 @@
+<!--<img src="https://www.tellychakkar.com/sites/www.tellychakkar.com/files/images/quiz/2015/02/21/quiz400.jpg" class="img-fluid" alt="Responsive image"> -->
+<div class="container mt-5">
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-sm">
+                <h1 class="display-4" style="text-align: center;">Q. {{currentQuestionText}}</h1>
+                <div *ngFor="let c of choices" class="lead mt-2">
+                    <label class="btn btn-primary-outline btn-lg ">
+                      <h2> <input type="radio" (click)="calculate(c.isAnswer)" name="answer"> {{c.text}} </h2>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-sm-5">
+                <span class="lead text-right" *ngIf="! isFirstQuestion">
+                    <button class="btn btn-info btn-lg " (click)="previousQuestion()">Previous Question</button>
+                </span>
+            </div>
+            <div class="col-sm-4">
+              <span class="lead text-center" *ngIf="! isLastQuestion">
+                  <button class="btn btn-info btn-lg" (click)="nextQuestion()">Next Question</button>
+              </span>
+            </div>
+            <div class="col-sm-3">
+                <div class="lead">
+                    <button class="btn btn-primary-outline btn-lg" (click)="viewResult()">Submit Test!</button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<br><br>
